@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Components</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="card">
+  <header>{{title}} <span v-on:click="toggle">{{editLabel}}</span></header>
+  <ul>
+  	<li v-for="dog in dogs">
+      <keep-alive>
+      <component
+        v-bind:is="currentView"
+        v-bind:initial-quantity="dog.quantity"
+        v-bind:name="dog.text"
+        v-bind:breed="dog.breed"></component>
+      </keep-alive>
+  	</li>
+  </ul>
+  <p>Total Dogs: {{total}}</p>
+</div>
+<script type="text/x-template" id="dog-edit">
+  <div>
+    <button v-on:click="increment">{{quantity}}</button> {{name}}
+  </div>
+</script>
+<script type="text/x-template" id="dog-show">
+  <div>
+    <strong>{{name}} | {{breed}}</strong>
+  </div>
+</script>
+
+<script src="https://unpkg.com/vue@2.4.2"></script>
+<script src="custom.js"></script>
+</body>

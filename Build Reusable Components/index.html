@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Build Reusable Components</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="card">
+  <header>{{title}}</header>
+  <ul>
+  	<li v-for="dog in dogs">
+      <dog-counter
+        v-bind:name="dog.text"
+        v-bind:initial-quantity="dog.quantity"
+        v-on:increment="incrementTotal"></dog-counter>
+  	</li>
+  </ul>
+  <p>Total Dogs: {{total}}</p>
+</div>
+<script type="text/x-template" id="dog-counter">
+  <div>
+    <button v-on:click="increment">{{quantity}}</button> {{name}}
+  </div>
+</script>
+
+<script src="https://unpkg.com/vue@2.4.2"></script>
+<script src="custom.js"></script>
+</body>

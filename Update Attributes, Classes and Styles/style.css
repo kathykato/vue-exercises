@@ -1,0 +1,78 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+h4 {
+  margin: 0;
+}
+
+#card {
+  border: 0.02rem solid #808080;
+  border-radius: 0.625rem;
+}
+
+#card header {
+  display: block;
+  border-radius: 0.08rem 0.08rem 0 0;
+  padding: 0.625rem;
+  font-size: 1.5rem;
+}
+
+#card span {
+  font-size: 0.75rem;
+  font-weight: normal;
+  font-style: italic;
+}
+
+div,
+p,
+form {
+  padding: 1rem;
+}
+
+ul { 
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+ul li {
+  padding: 0.5rem;
+  border: 0.01rem solid #808080;
+  margin: 0.5rem 0;
+  border-radius: 0.03rem;
+}
+
+ul li span {
+  font-weight: 600;
+}
+
+.rounded {
+  border-radius: 1rem;
+}
+
+.large {
+  font-size: 2rem;
+}
+
+label {
+  margin-left: 1rem;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

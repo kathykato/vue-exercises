@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handle DOM Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="card">
+  <header>{{title}}</header>
+  <form v-on:submit.prevent="addDogs">
+    <input type="number" v-model.number="amount">
+    <button>Add {{amount}} Dogs</button>
+  </form>
+  <p>You have {{total}} dogs!</p>
+</div>
+
+<script src="https://unpkg.com/vue@2.4.2"></script>
+<script src="custom.js"></script>
+</body>

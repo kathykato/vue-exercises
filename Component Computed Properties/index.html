@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Component Computed Properties</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="card">
+  <header>{{title}}</header>
+  <form v-on:submit="addDog">
+    <input type="text" id="item-form" v-model="input">
+    <button>Add Dog</button>
+  </form>
+  <ul>
+  	<li v-for="(dog, index) in dogs">
+      <button v-on:click="dog.quantity -= 1">-</button>
+      {{dog.quantity}}
+      <button v-on:click="dog.quantity += 1">+</button>
+      {{dog.text}} <button class="delete" v-on:click="removeDog(index)">Remove Dog</button>
+  	</li>
+  </ul>
+  <ul>
+    <li>Total Dogs: {{totalDogs}} <span>Updated: {{dogsUpdated}}</span></li>
+    <li>Total Breeds: {{totalBreeds}} <span>Updated: {{breedUpdated}}</span></li>
+  </ul>
+</div>
+
+<script src="https://unpkg.com/vue@2.4.2"></script>
+<script src="custom.js"></script>
+</body>
